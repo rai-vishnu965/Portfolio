@@ -26,7 +26,7 @@ const HIGHLIGHTS = [
   {
     icon: Trophy,
     title: 'Competitions',
-    body: 'Active hackathon competitor — building under pressure and shipping fast.',
+    points: ['Active hackathon competitor — building under pressure and shipping fast.'],
   },
 ]
 
@@ -111,7 +111,7 @@ export default function About() {
 
           {/* Right: highlight cards */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-            {HIGHLIGHTS.map(({ icon: Icon, title, body, points }) => (
+            {HIGHLIGHTS.map(({ icon: Icon, title, points }) => (
               <div key={title} className="about-item" style={{
                 display: 'flex',
                 gap: '1rem',
@@ -143,10 +143,6 @@ export default function About() {
                     color: 'var(--text)',
                     marginBottom: '0.4rem',
                   }}>{title}</p>
-
-                  {body && (
-                    <p style={{ fontSize: '0.82rem', color: 'var(--muted-2)', lineHeight: 1.6 }}>{body}</p>
-                  )}
 
                   {points && (
                     <ul style={{
