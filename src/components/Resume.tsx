@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Download, FileText } from 'lucide-react'
+import { Download, FileText, Eye } from 'lucide-react'
 
 export default function Resume() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -44,17 +44,29 @@ export default function Resume() {
 
           <p style={{ fontSize: '0.9rem', color: 'var(--muted-2)', lineHeight: 1.7, marginBottom: '2rem' }}>
             A concise overview of my education, projects, and skills.
-            {/* TODO: Add actual resume.pdf to /public folder */}
           </p>
 
-          {/* Download button */}
-          {/* Place your resume.pdf inside the /public directory */}
-          <a href="/resume.pdf" download="Vishnusmaran_Rai_Resume.pdf"
-             className="btn-primary"
-             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Download size={16} />
-            Download Resume
-          </a>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1rem',
+            flexWrap: 'wrap'
+          }}>
+            {/* View Resume Button */}
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer"
+               className="btn-primary">
+              <Eye size={16} />
+              View Resume
+            </a>
+
+            {/* Download Resume Button */}
+            <a href="/resume.pdf" download="Vishnusmaran_Rai_Resume.pdf"
+               className="btn-ghost">
+              <Download size={16} />
+              Download
+            </a>
+          </div>
         </div>
       </div>
     </section>
